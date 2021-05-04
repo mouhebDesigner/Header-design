@@ -1,0 +1,107 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+header{
+    height: 80px;
+    background-color: #3c1a5b;
+}
+header .wrapper_header{
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper_header .logo{
+    color: #12fcc6;
+    font-weight: bold;
+    font-size: 1.6rem;
+    position: relative;
+}
+.logo::after{
+    content: '>';
+    font-size: 2rem;
+    color: salmon;
+}
+.logo::before{
+    content: '</';
+    font-size: 2rem;
+    color: salmon;
+}
+.wrapper_header .menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-basis: 60%;
+}
+.sign{
+    padding: 8px;
+    background-color: #12fcc6;
+    outline: none;
+    border: 3px solid transparent;
+    color: #3c1a5b;
+    font-weight: bold;
+}
+.sign-in{
+    border: 3px solid #12fcc6;
+    background-color: transparent;
+    color: white;
+}
+.wrapper_header .menu li{
+    list-style: none;
+}
+.wrapper_header .menu li a{
+    text-decoration: none;
+    color: white;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+@media  (max-width: 1024px){
+   
+    header .wrapper_header{
+        width: 96%;
+        margin-left: 2%;
+    }
+    .wrapper_header .menu{
+        flex-basis: 50%;
+    }
+}
+@media (max-width: 724px){
+    body{
+        overflow-x: hidden;
+    }
+    .burger{
+        display: block;
+    }
+
+    .burger div{
+        width: 50px;
+        height: 3px;
+        margin-top: 8px;
+        background-color: #12fcc6;
+    }
+    .wrapper_header .menu{
+        position: absolute;
+        top: 80px;
+        right: 0;
+        flex-direction: column;
+        align-items: center;
+        height: calc(100vh - 80px);
+        width: 50%;
+        background-color: #3c1a5b;
+        transform: translateX(100%);
+        transition: transform .5s;
+    }
+  
+}
+.show-menu{
+    transform: translateX(0%) !important;
+    
+}
